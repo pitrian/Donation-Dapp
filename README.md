@@ -38,6 +38,8 @@ Thành viên 1	Leader / DevOps / Architect	Setup repo, Hardhat, deploy contract,
 Thành viên 2	Smart Contract Developer	Viết Solidity, tối ưu gas, unit test
 Thành viên 3	Frontend Developer	Thiết kế giao diện React, UX/UI
 Thành viên 4	Web3 Integration	Kết nối MetaMask, ethers.js, gọi contract
+
+
 📂 Cấu trúc thư mục dự án
 donation-dapp/
 │
