@@ -1,0 +1,27 @@
+{
+  "name": "donation-dapp",
+  "version": "1.0.0",
+  "description": "🔗 Blockchain Donation DApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pitrian/Donation-Dapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pitrian/Donation-Dapp/issues"
+  },
+  "homepage": "https://github.com/pitrian/Donation-Dapp#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}
