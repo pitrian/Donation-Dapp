@@ -1,190 +1,208 @@
-# Donation-Dapp
-🔗 Blockchain Donation DApp
+📦 Donation DApp – Ứng dụng Quyên Góp Minh Bạch trên Blockchain
+📌 Giới thiệu đề tài
 
-Ứng dụng quản lý quyên góp minh bạch bằng Blockchain (Ethereum)
+Donation DApp là một ứng dụng phi tập trung (Decentralized Application – DApp) được xây dựng trên nền tảng Blockchain Ethereum, cho phép người dùng thực hiện quyên góp tiền một cách minh bạch.
+Toàn bộ giao dịch quyên góp và rút tiền đều được ghi lại vĩnh viễn trên blockchain, đảm bảo tính công khai, minh bạch và không thể chỉnh sửa.
 
-📌 Giới thiệu dự án
+🎯 Mục tiêu của đề tài
 
-Blockchain Donation DApp là một ứng dụng phi tập trung (Decentralized Application – DApp) được xây dựng trên nền tảng Ethereum Blockchain, nhằm mục tiêu:
+Xây dựng một Smart Contract quản lý quyên góp
 
-Cho phép người dùng quyên góp ETH một cách minh bạch
+Đảm bảo mọi giao dịch:
 
-Mọi giao dịch được ghi on-chain, không thể chỉnh sửa
+Không thể sửa đổi
 
-Người dùng có thể xem lịch sử quyên góp công khai
+Có thể kiểm chứng công khai
 
-Tăng tính minh bạch – tin cậy – chống gian lận cho các quỹ từ thiện
+Giúp người dùng tin tưởng vào quá trình sử dụng tiền quyên góp
 
-Dự án được thực hiện phục vụ đồ án cuối kỳ môn Blockchain và Ứng dụng.
+Áp dụng kiến thức về:
 
-🧱 Kiến trúc hệ thống
-User (Browser)
-   |
-   | MetaMask + ethers.js
-   |
-Frontend (React)
-   |
-   | Call Smart Contract
-   |
+Blockchain
+
+Smart Contract
+
+Ethereum
+
+Web3
+
+🧠 Các khái niệm chính sử dụng trong đồ án
+🔹 Blockchain
+
+Blockchain là một sổ cái phân tán, nơi dữ liệu được lưu trữ theo từng khối (block) và liên kết với nhau bằng mật mã, đảm bảo dữ liệu không thể bị thay đổi.
+
+🔹 Ethereum
+
+Ethereum là một nền tảng blockchain hỗ trợ Smart Contract, cho phép lập trình các logic tự động như quyên góp, rút tiền.
+
+🔹 Smart Contract
+
+Smart Contract là chương trình chạy trên blockchain Ethereum, được viết bằng ngôn ngữ Solidity, tự động thực thi mà không cần bên thứ ba.
+
+🔹 Solidity
+
+Solidity là ngôn ngữ lập trình dùng để viết Smart Contract trên Ethereum.
+
+🔹 Testnet
+
+Testnet là mạng blockchain dùng để thử nghiệm, không sử dụng tiền thật.
+
+🔹 Sepolia
+
+Sepolia là Ethereum Testnet được khuyến nghị sử dụng hiện nay, dùng để:
+
+Deploy Smart Contract
+
+Test các chức năng trước khi đưa lên mainnet
+
+🔹 ETH Sepolia
+
+ETH Sepolia là ETH dùng trên mạng Sepolia, không có giá trị thật, dùng để trả phí gas khi deploy và gọi contract.
+
+🔹 Gas Fee
+
+Gas Fee là phí giao dịch cần trả để thực hiện các hành động trên blockchain như deploy contract, gọi hàm donate, withdraw.
+
+🏗️ Kiến trúc hệ thống
+Người dùng
+   │
+   ▼
+MetaMask (Ví Ethereum)
+   │
+   ▼
+Frontend (sẽ phát triển)
+   │
+   ▼
+ethers.js
+   │
+   ▼
 Smart Contract (Solidity)
-   |
-   | Sepolia Testnet
-   |
-Ethereum Blockchain
+   │
+   ▼
+Ethereum Blockchain (Sepolia Testnet)
 
-🧑‍🤝‍🧑 Phân công thành viên
-Thành viên	Vai trò	Nhiệm vụ
-Thành viên 1	Leader / DevOps / Architect	Setup repo, Hardhat, deploy contract, quản lý merge
-Thành viên 2	Smart Contract Developer	Viết Solidity, tối ưu gas, unit test
-Thành viên 3	Frontend Developer	Thiết kế giao diện React, UX/UI
-Thành viên 4	Web3 Integration	Kết nối MetaMask, ethers.js, gọi contract
-
-
-📂 Cấu trúc thư mục dự án
-donation-dapp/
+📁 Cấu trúc thư mục dự án
+Donation-Dapp/
 │
-├─ contracts/              # Smart Contract (Solidity)
-│   └─ Donation.sol
-│
-├─ scripts/                # Script deploy
-│   └─ deploy.js
-│
-├─ test/                   # Unit Test (Hardhat)
-│   └─ Donation.test.js
-│
-├─ frontend/               # React Frontend
-│
-├─ hardhat.config.js
-├─ package.json
-├─ .env                    # Biến môi trường (KHÔNG push)
-└─ README.md
+├── contracts/        # Smart Contract Solidity
+├── scripts/          # Script deploy contract
+├── test/             # Unit test cho Smart Contract
+├── artifacts/        # File build (Hardhat tạo)
+├── cache/            # Cache Hardhat
+├── hardhat.config.js # Cấu hình Hardhat
+├── package.json      # Thông tin project & dependencies
+├── .gitignore        # File ignore (bao gồm .env)
+├── .env              # Biến môi trường (KHÔNG push Git)
+└── README.md         # Tài liệu mô tả dự án
 
-⚙️ Công nghệ sử dụng
+🧑‍💻 Các bước thực hiện đồ án (từ đầu đến hiện tại)
+✅ Bước 1: Khởi tạo project
 
-Blockchain: Ethereum (Sepolia Testnet)
+Khởi tạo Node.js project
 
-Smart Contract: Solidity
+Cài đặt Hardhat
 
-Development Framework: Hardhat
+Tạo cấu trúc dự án
 
-Frontend: ReactJS
+npm init -y
+npm install --save-dev hardhat
+npx hardhat
 
-Web3 Library: ethers.js
+✅ Bước 2: Viết Smart Contract
 
-Wallet: MetaMask
+Viết contract quyên góp bằng Solidity
 
-Test: Mocha / Chai
+Các chức năng chính:
 
-🚀 Hướng dẫn cài đặt & chạy dự án
-1️⃣ Yêu cầu môi trường
+donate(): nhận tiền quyên góp
 
-Node.js >= 18
+withdraw(): chủ quỹ rút tiền
 
-MetaMask extension
+Ghi nhận lịch sử giao dịch
 
-Ví Ethereum có ETH Sepolia (testnet)
+Emit event cho donate và withdraw
 
-2️⃣ Clone project
-git clone <REPO_URL>
-cd donation-dapp
+✅ Bước 3: Viết Unit Test
 
-3️⃣ Cài đặt Hardhat
-npm install
+Sử dụng Mocha & Chai
 
-4️⃣ Cấu hình biến môi trường
+Kiểm tra:
 
-Tạo file .env tại thư mục gốc:
+Quyên góp thành công
 
-SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_KEY
-PRIVATE_KEY=0xYOUR_PRIVATE_KEY
+Số dư được cập nhật
 
+Chỉ owner được rút tiền
 
-⚠️ Không commit file .env
+Event được emit đúng
 
-5️⃣ Compile Smart Contract
-npx hardhat compile
-
-6️⃣ Chạy Unit Test
 npx hardhat test
 
-7️⃣ Deploy Smart Contract lên Sepolia
+✅ Bước 4: Cấu hình Hardhat & môi trường
+
+Cấu hình mạng Sepolia
+
+Sử dụng Infura RPC
+
+Lưu thông tin nhạy cảm trong .env
+
+Ví dụ .env:
+
+SEPOLIA_RPC_URL=...
+PRIVATE_KEY=...
+
+✅ Bước 5: Quản lý mã nguồn bằng Git
+
+Khởi tạo Git repository
+
+Cấu hình .gitignore để bỏ qua .env
+
+Push source code lên GitHub
+
+⏸️ Trạng thái hiện tại của dự án
+
+👉 Dự án hiện đang dừng tại bước: Xin ETH Sepolia Testnet
+
+Hạng mục	Trạng thái
+Smart Contract	✅ Hoàn thành
+Unit Test	✅ Pass
+Hardhat config	✅ Hoàn chỉnh
+GitHub repository	✅ Đã push
+ETH Sepolia	⏸️ Chưa có
+Deploy contract	⏸️ Chờ ETH
+▶️ Các bước tiếp theo (khi tiếp tục làm)
+🔜 Bước 6: Xin ETH Sepolia
+
+Sử dụng faucet:
+
+Chainlink Faucet
+
+QuickNode Faucet
+
+POW Faucet
+
+Mục đích: có ETH để trả gas fee khi deploy contract.
+
+🔜 Bước 7: Deploy Smart Contract lên Sepolia
 npx hardhat run scripts/deploy.js --network sepolia
 
 
-Sau khi deploy thành công, bạn sẽ nhận được:
+Kết quả mong đợi:
 
-Donation deployed to: 0xABC...
+Donation deployed to: 0x...
 
-📄 Thông tin Smart Contract (Demo)
+🔜 Bước 8: Kiểm tra trên Etherscan
 
-Network: Sepolia Testnet
+Truy cập Sepolia Etherscan
 
-Contract Address: 0xYOUR_CONTRACT_ADDRESS
+Xem lịch sử deploy & giao dịch
 
-Explorer: https://sepolia.etherscan.io
+🔜 Bước 9: Tích hợp Frontend (mở rộng)
 
-💻 Chạy Frontend
-cd frontend
-npm install
-npm start
+Dùng React + ethers.js
 
+Kết nối MetaMask
 
-Truy cập:
+Gọi hàm donate / withdraw
 
-http://localhost:3000
-
-🔄 Luồng hoạt động của ứng dụng
-
-Người dùng mở website
-
-Kết nối ví MetaMask
-
-Nhập số ETH muốn quyên góp + lời nhắn
-
-Xác nhận giao dịch trên MetaMask
-
-Giao dịch được ghi lên blockchain
-
-Lịch sử quyên góp hiển thị công khai
-
-🧪 Tính năng chính
-
-Kết nối ví MetaMask
-
-Quyên góp ETH
-
-Hiển thị danh sách người ủng hộ
-
-Lưu lịch sử quyên góp on-chain
-
-Quản lý rút tiền (owner)
-
-🔮 Hướng phát triển
-
-Hỗ trợ nhiều quỹ quyên góp
-
-Lưu metadata IPFS
-
-Biểu đồ thống kê số tiền quyên góp
-
-Phân quyền quản trị
-
-Deploy lên Mainnet
-
-📚 Tài liệu tham khảo
-
-https://ethereum.org
-
-https://hardhat.org
-
-https://docs.ethers.org
-
-https://docs.metamask.io
-
-👨‍🎓 Thông tin đồ án
-
-Môn học: Blockchain và Ứng dụng
-
-Hình thức: Nhóm
-
-Mục tiêu: Xây dựng DApp thực tế, minh bạch, có khả năng mở rộng
+Hiển thị lịch sử quyên góp
